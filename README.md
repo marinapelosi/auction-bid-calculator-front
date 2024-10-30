@@ -1,51 +1,59 @@
-# auction-bid-calculator-front
+# Bid Calculator App
 
-This template should help get you started developing with Vue 3 in Vite.
+The Bid Calculator App was built using Vue 3 in Vite.
 
-## Recommended IDE Setup
+## Behaviour
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+The App receive data and pass them to the API for calculating fees by their rules and add them to the price. After calculation, the API response is displayed on the screen for the user.
 
-## Customize configuration
+![alt text](image-9.png)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Setup
 
-## Project Setup
+```sh
+git clone git@github.com:marinapelosi/auction-bid-calculator-front.git
+```
+
+```sh
+cd auction-bid-calculator-front
+```
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Compile
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Usage
+
+Access the server url [http://localhost:5173/](http://localhost:5173/)
+
+![alt text](image-7.png)
+
+Enter the car price and then select the car type complying with the following rules.
+
+| Field | Rules  |
+|---------- |----------|
+| Car Price | Number min 1    |
+| Car Type  | Common or Luxury |
+
+Then wait for the calculation. It will be displayed below the form.
+
+![alt text](image-8.png)
+
+-------
+
+### Run End-to-End Test with [Cypress](https://www.cypress.io/)
 
 ```sh
-npm run build
+npx cypress open
 ```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
+![alt text](image.png)
+![alt text](image-5.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-10.png)

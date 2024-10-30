@@ -28,7 +28,6 @@
   
       <div v-if="result" class="result">
         <h2>Calculation Result</h2>
-        <!-- Tabela de uma linha para as taxas -->
         <table class="single-row-table">
           <thead>
             <tr>
@@ -48,7 +47,6 @@
           </tbody>
         </table>
   
-        <!-- Exibição do total destacado -->
         <div class="total-display">
           Total: ${{ result.total }}
         </div>
@@ -73,12 +71,19 @@
         apiService: createApiService(),
       };
     },
+    watch: {
+    price(value) {
+        if (value < 1) {
+          this.price = ""; 
+        }
+      },
+    },
     methods: {
       autoSubmit() {
         if (this.price >= 1 && this.carType) {
           this.calculatePrice();
         }
-      },
+      },      
       async calculatePrice() {
         this.error = null;
         this.result = null;
@@ -102,8 +107,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px;
-    width: 100%;
+    width: 600px;
+    height: 500px;
     margin: 0 auto;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
